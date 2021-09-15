@@ -106,7 +106,7 @@ docker load -i <local .tar file>
 3. Publish your image!
 ```bash
 # login to docker hub
-docker lgoin -u <username> -p <password>
+docker login -u <username> -p <password>
 # tag the image
 docker tag <image repo>:<image tag> <username>/<image repo>:<image tag>
 # push the image
