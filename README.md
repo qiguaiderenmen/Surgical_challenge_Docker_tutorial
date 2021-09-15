@@ -18,7 +18,7 @@ Now we're ready to create our own image/container using Docker.
 
 The main proposition of using container here is to communicate with AMBF installed on your local machine, control it via some APIs and perform automation by your sparkling ideas. Generally speaking, it should involve ROS Melodic and some Python scripts, for which you'll have two options to set them up.
 
-- Via a few commands
+- **Via a few commands**
 
 1. Open a terminal, pull the ROS image and create a local container:
 
@@ -36,7 +36,7 @@ cd ~/home
 git clone https://github.com/adnanmunawar/surgical_robotics_challenge 
 ```
 
-- Via Docker build
+- **Via Docker build**
 
 ## Tests
 
@@ -84,7 +84,7 @@ Once you're done with the development, please refer to the following commands to
 ```bash
 docker commit <container ID> <new image name>
 ```
-Container ID can be seen by using 'docker ps -a' command. Example:
+Container ID can be seen by using 'docker ps -a' command. **Example**:
 ```bash
 docker commit a554ba6ed056 ros-ambf:melodic
 ```
@@ -94,7 +94,7 @@ docker commit a554ba6ed056 ros-ambf:melodic
 ```bash
 docker save -o <output image name.tar> <image repo>:<image tag>
 ```
-Example:
+**Example**:
 ```bash
 docker save -o ros-ambf.tar ros-ambf:melodic
 ```
@@ -112,7 +112,7 @@ docker tag <image repo>:<image tag> <username>/<image repo>:<image tag>
 # push the image
 docker push <username>/<image repo>:<image tag>
 ```
-Example:
+**Example**:
 ```bash
 docker tag ros-ambf:melodic strangeman1234/ros-ambf:melodic
 docker push strangeman1234/ros-ambf:melodic
@@ -122,10 +122,8 @@ All set! If you now login to the Docker hub website, you'll see this image repo 
 
 ## Some extra information
 
-1. Somehow in a new ROS container bash, when you do 'rostopic list' or other commands, it may occur:
-```bash
-bash: rostopic: command not found
-```
+1. Somehow in a new ROS container bash, when you do 'rostopic list' or other commands, it may occur: 'bash: rostopic: command not found'
+
 That case we just need to source it. Do either:
 ``` bash
 source /opt/ros/melodic/setup.bash 
